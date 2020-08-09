@@ -1,17 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content  >
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-item lines="none" >
+        <ion-input class="input" [(ngModel)] = "task" placeholder="Enter the task"></ion-input>
+  
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-button class="addTask" (click) = "addTask()" >Add</ion-button>
+
+</ion-item>
+
+    <ion-item lines="none">
+        <ion-label class="heading">TO DO:</ion-label>
+    </ion-item>
+
+    <ion-list radio-group *ngFor="let task of taskList;let i = index" (ionChange)="completed($event,i)">
+
+        <ion-radio-group>
+
+        <app-task [task] = "task"  ></app-task>
+
+    </ion-radio-group>
+
+    </ion-list>
 </ion-content>

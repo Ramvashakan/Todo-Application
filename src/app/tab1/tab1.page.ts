@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import {TodoTaskService} from '../todo-task.service'
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -7,6 +9,25 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  task:any;
 
+  taskList = []
+
+
+  constructor(private todoService:TodoTaskService) {}
+
+
+  addTask(){
+
+    this.taskList.push(this.task);
+
+    this.task = "";
+
+  }
+
+  completed(value,i){
+    
+    this.todoService.Completed(value.detail.value);
+
+  }
 }
