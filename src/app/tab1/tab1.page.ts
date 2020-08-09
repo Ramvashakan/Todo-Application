@@ -29,5 +29,11 @@ export class Tab1Page {
     
     this.todoService.Completed(value.detail.value);
 
+    setTimeout(() => {
+
+      this.taskList.splice(i,1);
+      
+    }, 2000);
+
   }
 }

@@ -1,0 +1,13 @@
+<ion-content padding>
+
+    <ion-label class="heading"> Completed Task </ion-label>
+
+        <ion-list *ngFor="let a of completedTask; let i=index" >
+
+            <ion-item class="list">
+            {{i+1}} : {{a}}
+            </ion-item>
+
+        </ion-list>
+
+</ion-content>

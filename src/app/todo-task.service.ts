@@ -13,9 +13,12 @@ export class TodoTaskService {
   Completed(data){
 
     this.completedTask.push(data)
-   
-    console.log(this.completedTask)
-    
+  }
+
+  getData(){
+
+    return this.completedTask;
+
   }
 
 
